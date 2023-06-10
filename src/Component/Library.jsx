@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import style from "./Library.module.css";
 import Item from "./Item";
 
-function Library(props) {
+function Library() {
 
   const [modalActive, setModalActive] = useState(false)
   return (
@@ -13,6 +13,7 @@ function Library(props) {
         src={require("../image/Armor-Piercing_Rounds.png")}
         className={style.iconItem}
         onClick={()=>setModalActive(true)}
+        alt={"Item"}
       />
       <Item active = {modalActive} setActive={setModalActive}/>
     </div>
