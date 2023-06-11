@@ -2,16 +2,17 @@ import React, {useState} from "react";
 import styles from "./Navbar.module.css";
 import Settings from "./Settings";
 
-function Navbar() {
+function Navbar({setsearchTerms , searchTerms}) {
   const [Setting, setSetting] = useState(false)
+
   return (
     <>
       <nav
-        className="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark"
+        className="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark fixed-top"
         data-bs-theme="dark"
       >
         <div className="container-xxl">
-          <div className={"navbar-brand"} оnClick={''}>
+          <div className={"navbar-brand"}>
             RoR2 Item
           </div>
           <button
@@ -28,7 +29,7 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <div className="nav-link">Link</div>
+                <div className="nav-link">Персонажі</div>
               </li>
               <li className="nav-item dropdown">
                 <div
@@ -55,12 +56,14 @@ function Navbar() {
                 </ul>
               </li>
             </ul>
-            <form className="d-flex" role="search">
+            <form className="d-flex">
               <input
+                  value={searchTerms}
                 className="form-control me-2"
                 type="search"
                 placeholder="Пошук"
                 aria-label="Search"
+                onChange={(event)=>setsearchTerms(event.target.value)}
               />
             </form>
             <button className={styles.optionExpander} onClick={()=>setSetting(true)}>

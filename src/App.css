@@ -1,8 +1,7 @@
 .App {
-  background: #d3d3d3;
   font-family: 'Open Sans', sans-serif;
   line-height: normal;
-  height:2400px;
+  height:auto;
 }
 .LibraryBackground{
   height: auto;
@@ -17,5 +16,14 @@ url("./image/border-right.png") top right repeat-Y,url("./image/main.png") repea
   padding-top: 20px;
   min-height: calc(100vh - 160px);
   border-radius: 20px;
+}
+
+.darkMode{
+  background: #272727;
+  transition: all 0.3s ease;
+}
+.lightMode{
+  background: white;
+  transition: all 0.3s ease;
 }
 

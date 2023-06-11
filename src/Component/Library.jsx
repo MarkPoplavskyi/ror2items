@@ -1,21 +1,23 @@
-import React, {useState} from "react";
+    import React, {useEffect, useState} from "react";
 import style from "./Library.module.css";
+
 import Item from "./Item";
 
-function Library() {
+
+function Library(name) {
 
   const [modalActive, setModalActive] = useState(false)
   return (
-    <div
-      className={"col-4 col-sm 3 col-lg-2 d-inline-flex justify-content-center"}
-    >
+    <div className={"col-4 col-sm 3 col-lg-2 d-inline-flex justify-content-center"}>
+        <div className={style.shadowDrop2Bottom}>
       <img
-        src={require("../image/Armor-Piercing_Rounds.png")}
+        src={`item/${name.img}`}
         className={style.iconItem}
         onClick={()=>setModalActive(true)}
-        alt={"Item"}
+        alt={name.name}
       />
-      <Item active = {modalActive} setActive={setModalActive}/>
+        <Item key={name.id} active = {modalActive} setActive={setModalActive} name={name}/>
+        </div>
     </div>
   );
 }
